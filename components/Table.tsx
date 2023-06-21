@@ -13,7 +13,7 @@ function Table({ products, selectedPlan }: Props) {
                 <tr className="tableRow">
                     <td className="tableDataTitle">Monthly price</td>
                     {products.map((product) => (
-                        <td key={product.id} className={`tableDataFeature ${selectedPlan.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
+                        <td key={product.id} className={`tableDataFeature ${selectedPlan?.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
                             Euro {product.prices[0].unit_amount! / 100}
                         </td>
                     ))}
@@ -22,7 +22,7 @@ function Table({ products, selectedPlan }: Props) {
                 <tr className="tableRow">
                     <td className="tableDataTitle">Video Quality</td>
                     {products.map((product) => (
-                        <td key={product.id} className={`tableDataFeature ${selectedPlan.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
+                        <td key={product.id} className={`tableDataFeature ${selectedPlan?.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
                             {product.metadata.videoQuality}
                         </td>
                     ))}
@@ -31,7 +31,7 @@ function Table({ products, selectedPlan }: Props) {
                 <tr className="tableRow">
                     <td className="tableDataTitle">Resolution</td>
                     {products.map((product) => (
-                        <td key={product.id} className={`tableDataFeature ${selectedPlan.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
+                        <td key={product.id} className={`tableDataFeature ${selectedPlan?.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
                             {product.metadata.resolution}
                         </td>
                     ))}
@@ -39,7 +39,7 @@ function Table({ products, selectedPlan }: Props) {
                 <tr className="tableRow">
                     <td className="tableDataTitle">Watch on your Tv,computer,mobile phone and tablet</td>
                     {products.map((product) => (
-                        <td key={product.id} className={`tableDataFeature ${selectedPlan.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
+                        <td key={product.id} className={`tableDataFeature ${selectedPlan?.id === product.id ? 'text-[#e50914]' : 'text-[gray]'}`}>
                             {product.metadata.portability === 'true' && (
                                 <CheckIcon className="inline-block h-8 w-8" />
                             )}
