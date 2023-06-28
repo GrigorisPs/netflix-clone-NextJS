@@ -1,11 +1,12 @@
+import Membership from "@/components/Membership"
 import useAuth from "@/hooks/useAuth"
 import useSubscription from "@/hooks/useSubscription"
-import payments from "@/lib/stripe"
+import payments, { goToBillingPortal } from "@/lib/stripe"
 import { Product, getProducts } from "@stripe/firestore-stripe-payments"
 import { GetStaticProps } from "next"
 import Head from "next/head"
 import Link from "next/link"
-import { use } from "react"
+
 
 
 interface Props {
@@ -50,17 +51,21 @@ function Account({ products }: Props) {
                     </div>
                 </div>
 
-                {/* <Membership /> */}
+                <Membership />
                 <div className="acountDivStyle">
-                    <h4> Plan details</h4>
+                    <h4 className="text-lg text-[gray]">Plan Details</h4>
                     {/* Find the current plan */}
-                    <div className="col">
-                        {products.filter(
-                            (product) => product.id === subscription?.product
-                        )[0]?.name}
+                    <div className="col-span-2 font-medium">
+                        {
+                            products.filter(
+                                (product) => product.id === subscription?.product
+                            )[0]?.name
+                        }
                     </div>
-                    <p className="cursor-pointer text-blue-500 hover:underline md:text-right">
-                        Change Plan</p>
+                    <p className="cursor-pointer text-blue-500 hover:underline md:text-right"
+                    >
+                        Change plan
+                    </p>
                 </div>
 
                 <div className="acountDivStyle">
