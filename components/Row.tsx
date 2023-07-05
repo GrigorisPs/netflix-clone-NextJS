@@ -1,13 +1,13 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 import { Movie } from "@/typings"
-import Thumbnail from "./ThumbNail"
+import Thumbnail from "./Thumbnail"
 import { useRef, useState } from "react"
+import { DocumentData } from 'firebase/firestore'
 
 
 interface Props {
-    title: string
-    movies: Movie[]
-    // movie: Movie[] | DocumentData[]
+  title: string
+  movies: Movie[] | DocumentData[]
 }
 function Row({ title, movies }: Props) {
   const rowRef = useRef<HTMLDivElement>(null)
@@ -33,9 +33,8 @@ function Row({ title, movies }: Props) {
       </h2>
       <div className="group relative md:-ml-2">
         <ChevronLeftIcon
-          className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
-            !isMoved && 'hidden'
-          }`}
+          className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved && 'hidden'
+            }`}
           onClick={() => handleClick('left')}
         />
         <div
