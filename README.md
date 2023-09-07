@@ -37,8 +37,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-##Stripe Settings 
--Use stripe demon card for the payment 
--Card number(4242 4242 4242 4242) for a successfull payment 
--Be sure so use a valid Expiration date 
--Cv can be 3 random numbers
+## Stripe Settings 
+
+
+- Use stripe demon card for the payment 
+- Card number(4242 4242 4242 4242) for a successfull payment 
+- Be sure so use a valid Expiration date 
+- Cv can be 3 random numbers
